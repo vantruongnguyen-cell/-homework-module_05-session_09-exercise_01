@@ -1,0 +1,11 @@
+image: gradle:8.5-jdk17
+
+stages:
+  - build_app
+
+build_job:
+  stage: build_app
+  before_script:
+    - chmod +x gradlew
+  script:
+    - ./gradlew clean build -x test
